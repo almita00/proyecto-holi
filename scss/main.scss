@@ -1,0 +1,57 @@
+// Variables
+$primary-color: #8B4513;
+$secondary-color: #F5F5DC;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+// Header
+header {
+  background: $primary-color;
+  color: white;
+  padding: 1rem;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+// Main
+main {
+  padding: 2rem;
+}
+
+// Footer
+footer {
+  background: $secondary-color;
+  text-align: center;
+  padding: 1rem;
+}

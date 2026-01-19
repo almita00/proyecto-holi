@@ -1,0 +1,17 @@
+{
+  "name": "proyecto-holi",
+  "version": "1.0.0",
+  "description": "Taller de Arte - Proyecto SASS y Responsive Design",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass scss/main.scss css/main.css",
+    "sass:watch": "sass --watch scss:css",
+    "sass:production": "sass --style=compressed scss/main.scss css/main.css"
+  },
+  "keywords": ["sass", "scss", "responsive"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}
