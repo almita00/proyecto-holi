@@ -53,6 +53,11 @@ footer {
   font-weight: bold;
 }
 
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
+
 /*HERO*/
 .hero {
   min-height: 80vh;

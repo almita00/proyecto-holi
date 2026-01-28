@@ -23,6 +23,30 @@
   <main>
     <h2>Contacto</h2>
     <p>Contáctanos para más información.</p>
+
+<form id="contactForm" novalidate></form>
+    <div class="form-group">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+      <small class="error-message"></small>
+</div>
+
+<div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <small class="error-message"></small>
+</div>
+
+<div class="form-group">
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" required></textarea>
+      <small class="error-message"></small>
+</div>
+
+      <button type="submit">Enviar</button>
+
+      <p id="formSuccess" hidden>Mensaje enviado correctamente ✨</p>
+    </form>
   </main>
 
   <footer>
