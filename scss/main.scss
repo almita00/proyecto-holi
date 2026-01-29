@@ -89,10 +89,13 @@ nav a.active {
   margin-bottom: 2rem;
 }
 
+
 .hero_image img {
   width: 100%;
-  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
+
 
 /*BOTONES*/
 .btn_primary {
@@ -113,6 +116,11 @@ nav a.active {
   padding: 0.8rem 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .btn-agregar:hover {
@@ -140,6 +148,60 @@ nav a.active {
   margin-top: 2rem;
 }
 
+.talleres {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.taller-card {
+  background-color: $text-light;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.taller-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.page-contacto {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.contacto-intro {
+  margin-bottom: 2rem;
+  color: $text-dark;
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-contacto label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 0.3rem;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
 .producto {
   background: white;
   border-radius: 12px;
@@ -164,4 +226,123 @@ nav a.active {
   font-weight: bold;
   color: $primary;
   font-size: 1.1rem;
+}
+
+.taller {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.taller-imagenes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.taller-imagenes img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .taller {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .taller-imagenes {
+    grid-template-columns: 1fr;
+  }
+}
+
+#contador-carrito {
+  transition: transform 0.3s ease;
+}
+
+#contador-carrito.animar {
+  transform: scale(1.3);
+}
+
+.carrito .total {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+/*TALLERES*/
+
+.page-talleres {
+  padding: 2rem;
+}
+
+.talleres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.taller-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  button {
+    margin-top: 1rem;
+  }
+}
+
+.btn-ver-mas {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.6rem 1.2rem;
+  background-color: $accent;
+  color: $text-light;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+  background-color: color.adjust($accent, $lightness: -10%);
+}
+main {
+  min-height: 80vh;
+}
+
+h1, h2 {
+  letter-spacing: 0.5px;
+}
+
+section {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

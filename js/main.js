@@ -1,8 +1,63 @@
-// JavaScript básico
+// ESTADO EN MEMORIA
 let carrito = [];
 
+// ELEMENTOS DEL DOM
+const botonesAgregar = document.querySelectorAll(".btn-agregar");
+const btnVaciar = document.getElementById("vaciar-carrito");
 const contadorCarrito = document.getElementById("contador-carrito");
 const listaCarrito = document.getElementById("lista-carrito");
+
+
+botonesAgregar.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const producto = {
+      id: boton.dataset.id,
+      nombre: boton.dataset.nombre,
+      precio: Number(boton.dataset.precio),
+      cantidad: 1
+    };
+btnVaciar.addEventListener("click", () => {
+  vaciarCarrito();
+});
+function vaciarCarrito() {
+  carrito = [];
+  actualizarCarrito();
+}
+
+    function agregarAlCarrito(producto) {
+  const productoExistente = carrito.find(
+    (item) => item.id === producto.id
+  );
+
+  if (productoExistente) {
+    productoExistente.cantidad++;
+  } else {
+    carrito.push(producto);
+  }
+
+  actualizarCarrito();
+}
+function actualizarCarrito() {
+  // CONTADOR
+  const totalProductos = carrito.reduce(
+    (acc, item) => acc + item.cantidad,
+    0
+  );
+  contadorCarrito.textContent = totalProductos;
+
+  // LISTA
+  listaCarrito.innerHTML = "";
+
+  carrito.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.nombre} x${item.cantidad} - $${item.precio * item.cantidad}`;
+    listaCarrito.appendChild(li);
+  });
+}
+
+    agregarAlCarrito(producto);
+  });
+});
 
 
 function actualizarCarrito() {
@@ -21,6 +76,13 @@ function actualizarCarrito() {
     botonVaciar.addEventListener("click", () => {
   carrito = [];
   actualizarCarrito();
+
+  contadorCarrito.classList.add("animar");
+
+setTimeout(() => {
+  contadorCarrito.classList.remove("animar");
+}, 300);
+
 });
 
   });
@@ -151,8 +213,6 @@ navLinks.forEach(link => {
   }
 });
 
-const botonesAgregar = document.querySelectorAll('.btn_agregar')
-;
 console.log(botonesAgregar);
 
 botonesAgregar.forEach(boton => {
@@ -177,3 +237,21 @@ if (!existe) {
   console.log("Ya está en el carrito");
 }
 
+const formContacto = document.querySelector(".form-contacto");
+
+if (formContacto) {
+  formContacto.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const mensaje = document.createElement("p");
+    mensaje.textContent = "✨ Mensaje enviado correctamente. Gracias por escribirnos 💌";
+    mensaje.classList.add("mensaje-exito");
+
+    formContacto.reset();
+    formContacto.appendChild(mensaje);
+
+    setTimeout(() => {
+      mensaje.remove();
+    }, 4000);
+  });
+}

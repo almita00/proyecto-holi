@@ -107,6 +107,10 @@ nav a.active {
   padding: 0.8rem 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-agregar:active {
+  transform: scale(0.95);
 }
 
 .btn-agregar:hover {
@@ -156,6 +160,163 @@ nav a.active {
   font-weight: bold;
   color: #c96b2c;
   font-size: 1.1rem;
+}
+
+#contador-carrito {
+  transition: transform 0.3s ease;
+}
+
+#contador-carrito.animar {
+  transform: scale(1.3);
+}
+
+.carrito .total {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+/*TALLERES*/
+.talleres {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.page-contacto {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.contacto-intro {
+  margin-bottom: 2rem;
+  color: #444444;
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-contacto label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 0.3rem;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  outline: none;
+  border-color: #c96b2c;
+  box-shadow: 0 0 0 2px rgba(#c96b2c, 0.2);
+}
+
+.form-contacto button {
+  align-self: flex-start;
+}
+.form-contacto button:hover {
+  transform: translateY(-2px);
+}
+.form-contacto textarea {
+  resize: vertical;
+}
+
+.mensaje-exito {
+  margin-top: 1rem;
+  color: green;
+  font-weight: bold;
+  animation: fadeIn 0.4s ease;
+}
+
+
+.taller-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.taller-descripcion {
+  font-size: 0.95rem;
+  color: #555555;
+}
+
+.taller-info {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.page-talleres {
+  padding: 2rem;
+}
+
+.talleres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.taller-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.taller-card:hover {
+  transform: translateY(-5px);
+}
+.taller-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+.taller-card button {
+  margin-top: 1rem;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
