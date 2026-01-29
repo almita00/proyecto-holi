@@ -1,4 +1,31 @@
 // JavaScript básico
+let carrito = [];
+
+const contadorCarrito = document.getElementById("contador-carrito");
+const listaCarrito = document.getElementById("lista-carrito");
+
+
+function actualizarCarrito() {
+  // contador
+  contadorCarrito.textContent = carrito.length;
+
+  // limpiar lista
+  listaCarrito.innerHTML = "";
+
+  // renderizar productos
+  carrito.forEach(producto => {
+    const li = document.createElement("li");
+    li.textContent = `${producto.nombre} - $${producto.precio}`;
+    listaCarrito.appendChild(li);
+
+    botonVaciar.addEventListener("click", () => {
+  carrito = [];
+  actualizarCarrito();
+});
+
+  });
+}
+
 console.log('Holi Taller de Arte - Sitio cargado');
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -123,3 +150,30 @@ navLinks.forEach(link => {
     link.classList.add("active");
   }
 });
+
+const botonesAgregar = document.querySelectorAll('.btn_agregar')
+;
+console.log(botonesAgregar);
+
+botonesAgregar.forEach(boton => {
+  boton.addEventListener("click", () => {
+    const producto = {
+      id: boton.dataset.id,
+      nombre: boton.dataset.nombre,
+      precio: Number(boton.dataset.precio)
+    };
+
+    carrito.push(producto);
+    console.log(carrito);
+    actualizarCarrito();
+  });
+});
+
+const existe = carrito.find(item => item.id === producto.id);
+
+if (!existe) {
+  carrito.push(producto);
+} else {
+  console.log("Ya está en el carrito");
+}
+

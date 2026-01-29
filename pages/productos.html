@@ -20,15 +20,72 @@
     </nav>
   </header>
 
-  <main>
-  <h2>Productos</h2>
-  <section id="productList" class="products-grid"></section>
-</main>
+  <main class="page-productos">
+    <h2>Productos</h2>
+    <section class="carrito-info">
+  <p>🛒 Carrito: <span id="contador-carrito">0</span> productos</p>
+</section>
 
+<section class="productos">
+  <section class="productos-grid">
+      <article class="producto-card">
+        <img src="../img/producto-1.jpg" alt="Producto artistico 1">
+        <h3>Ensaladera XXL</h3>
+        <p class="precio">$45.000</p>
+        <button>Ver mas</button>
+        <article class="producto-card">
+  <button class="btn-agregar"
+  data-id="2"
+  data-nombre="Ensaladera XXL"
+  data-precio="45000">
+  Agregar
+</button>
+</article>
+</section>
+  
+    <section class="productos-grid">
+      <article class="producto-card">
+        <img src="../img/producto-1.jpg" alt="Producto artistico 1">
+        <h3>Platos XL</h3>
+        <p class="precio">$35.000</p>
+        <button>Ver mas</button>
+        <article class="producto-card">
+  <button class="btn-agregar"
+  data-id="1"
+  data-nombre="Platos XL"
+  data-precio="35000">
+  Agregar
+</article>
+</button>
+</section>
+
+<section class="productos-grid">
+      <article class="producto-card">
+        <img src="../img/producto-1.jpg" alt="Producto artistico 1">
+        <h3>Casuelas</h3>
+        <p class="precio">$25.000</p>
+        <button>Ver mas</button>
+        <article class="producto-card">
+  <button class="btn-agregar"
+  data-id="2"
+  data-nombre="Ensaladera XXL"
+  data-precio="45000">
+  Agregar
+</button>
+</article>
+</section>
+  </main>
   <footer>
     <p>&copy; 2026 Holi Taller de Arte</p>
   </footer>
 
   <script src="../js/main.js"></script>
+
+<section class="carrito">
+  <h2>Tu carrito</h2>
+  <ul id="lista-carrito">
+    <button id="vaciar-carrito">Vaciar carrito</button>
+  </ul>
+</section>
 </body>
 </html>
