@@ -7,12 +7,19 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f8f6f3;
-  color: #2e2e2e;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f1ec;
+  color: #3e2c23;
   line-height: 1.6;
 }
 
+header h1 {
+  color: #f5f1ec;
+  font-size: 1.8em;
+  margin: 0;
+  font-weight: 600;
+}
 /*LAYOUT GENERAL*/
 header {
   width: 100%;
@@ -20,17 +27,63 @@ header {
 
 main {
   width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 footer {
   width: 100%;
 }
 
-/*HEADER / NAV*/
-.header {
-  background-color: #c96b2c;
+/*MAIN*/
+
+.main {
+  padding: 2rem 1rem;
+}
+
+.content {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/*HEADER*/
+.header{
+  background-color: #3e2c23;
   padding: 1rem 2rem;
 }
+
+header a {
+  color: #f5f1ec;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+header a:hover {
+  color: #e8c3a3;
+}
+
+header a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #e8c3a3;
+  transition: width 0.3s ease;
+}
+
+header a:hover::after {
+  width: 100%;
+}
+
+.header-tittle {
+  color: #f5f1ec;
+  font-weight: 600;
+}
+
+/*NAV*/
 
 .nav {
   display: flex;
@@ -50,7 +103,7 @@ footer {
   font-weight: bold;
 }
 
-nav a.active {
+.nav.active {
   font-weight: bold;
   border-bottom: 2px solid #333;
 }
@@ -60,7 +113,9 @@ nav a.active {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #c96b2c, #f2c6a0);
+  background: linear-gradient(135deg,
+  #d9a066 0%,
+  #e8c3a3 100%);
   color: #ffffff;
 }
 
@@ -89,7 +144,7 @@ nav a.active {
 }
 
 /*BOTONES*/
-.btn_primary {
+.btn-primary {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   background-color: #6b4e2e;
@@ -100,7 +155,7 @@ nav a.active {
 }
 
 .btn-agregar {
-  background-color: #6b4e2e;
+  background-color: #c97b63;
   color: white;
   border: none;
   border-radius: 8px;
@@ -109,18 +164,52 @@ nav a.active {
   transition: background-color 0.3s ease, transform 0.2s ease;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .btn-agregar:active {
   transform: scale(0.95);
 }
 
 .btn-agregar:hover {
-  background-color: rgb(71.3333333333, 52, 30.6666666667);
+  background-color: #b06650;
   transform: translateY(-2px);
 }
 
-.btn_primary:hover {
-  background-color: rgb(71.3333333333, 52, 30.6666666667);
+.btn-vaciar {
+  background-color: #3e2c23;
+  color: #f5f1ec;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
+
+.btn-vaciar:hover {
+  background-color: #5a3f33;
+  transform: translateY(-2px);
+}
+
+.button {
+  font-family: inherit;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0 , 0, 0.15);
+}
+
 
 /*MEDIA QUERIES*/
 @media (max-width: 768px) {
@@ -129,45 +218,74 @@ nav a.active {
     text-align: center;
   }
 }
+/* ====== PAGINA PRODUCTOS ====== */
+
+.page-productos {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.page-productos h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #3e2c23;
+  font-weight: 600;
+  text-align: center;
+}
+
 .productos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .producto {
-  background: white;
+  background: #ffffff;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: space-between;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
 }
 
 .producto img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .producto h3 {
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .producto .precio {
   font-weight: bold;
   color: #c96b2c;
   font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
-
 #contador-carrito {
   transition: transform 0.3s ease;
 }
 
 #contador-carrito.animar {
   transform: scale(1.3);
+}
+
+.carrito-info {
+  margin-bottom: 30px;
 }
 
 .carrito .total {
@@ -186,9 +304,19 @@ nav a.active {
 }
 
 .page-contacto {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.page-contacto label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.page-contacto input,
+.page-contacto textarea {
+  margin-bottom: 20px;
 }
 
 .contacto-intro {
@@ -242,22 +370,6 @@ nav a.active {
 }
 
 
-.taller-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.6s ease forwards;
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .taller-descripcion {
   font-size: 0.95rem;
   color: #555555;
@@ -284,14 +396,19 @@ nav a.active {
 }
 
 .taller-card {
-  background: #fff;
-  padding: 1rem;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .taller-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 .taller-card img {
   width: 100%;
@@ -301,17 +418,56 @@ nav a.active {
   margin-top: 1rem;
 }
 
-@keyframes fadeUp {
+.page-taller {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.page-taller h2 {
+  margin-bottom: 20px;
+}
+
+.page-taller p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.imagenes-taller {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.imagenes-taller img {
+  width: 48%;
+  border-radius: 10px;
+}
+
+button:focus-visible {
+  outline: 2px solid #c96b2c;
+  outline-offset: 3px;
+}
+
+main {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes fadeIn {
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(5px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;

@@ -6,86 +6,96 @@
   <title>Productos | Holi Taller de Arte</title>
   <link rel="stylesheet" href="../css/main.css">
 </head>
+
 <body>
-  <header>
-    <h1>Holi Taller de Arte</h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="taller.html">El Taller</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="talleres.html">Talleres</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+
+  <header class="header">
+    <div class="header_container">
+      <h1 class="header_title">HOLI Taller de Arte</h1>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav_list">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../pages/taller.html">El Taller</a></li>
+          <li><a href="../pages/productos.html">Productos</a></li>
+          <li><a href="../pages/talleres.html">Talleres</a></li>
+          <li><a href="../pages/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main class="page-productos">
-    <h2>Productos</h2>
+    <div class="productos-layout">
 
-<section class="carrito-info">
-  <p>🛒 Carrito: <span id="contador-carrito">0</span> productos</p>
-</section>
-<button id="vaciar-carrito" class="btn-vaciar">
-  Vaciar carrito
-</button>
-<section class="productos">
+      <!-- SECCIÓN PRODUCTOS -->
+      <section class="productos-section">
+        <h2>Nuestros Productos</h2>
+        <div class="productos">
 
-  <!-- PRODUCTO 1 -->
-  <article class="producto">
-    <img src="../img/producto-1.jpg" alt="Ensaladera XXL">
-    <h3>Ensaladera XXL</h3>
-    <p class="precio">$45.000</p>
+          <article class="producto">
+            <img src="../img/producto-1.jpg" alt="Ensaladera XXL">
+            <h3>Ensaladera XXL</h3>
+            <p class="precio">$45.000</p>
+            <button class="btn-agregar"
+              data-id="1"
+              data-nombre="Ensaladera XXL"
+              data-precio="45000">
+              Agregar
+            </button>
+          </article>
 
-    <button class="btn-agregar"
-      data-id="1"
-      data-nombre="Ensaladera XXL"
-      data-precio="45000">
-      Agregar
-    </button>
-  </article>
+          <article class="producto">
+            <img src="../img/producto-1.jpg" alt="Platos XL">
+            <h3>Platos XL</h3>
+            <p class="precio">$35.000</p>
+            <button class="btn-agregar"
+              data-id="2"
+              data-nombre="Platos XL"
+              data-precio="35000">
+              Agregar
+            </button>
+          </article>
 
-  <!-- PRODUCTO 2 -->
-  <article class="producto">
-    <img src="../img/producto-1.jpg" alt="Platos XL">
-    <h3>Platos XL</h3>
-    <p class="precio">$35.000</p>
+          <article class="producto">
+            <img src="../img/producto-1.jpg" alt="Cazuelas">
+            <h3>Cazuelas</h3>
+            <p class="precio">$25.000</p>
+            <button class="btn-agregar"
+              data-id="3"
+              data-nombre="Cazuelas"
+              data-precio="25000">
+              Agregar
+            </button>
+          </article>
 
-    <button class="btn-agregar"
-      data-id="2"
-      data-nombre="Platos XL"
-      data-precio="35000">
-      Agregar
-    </button>
-  </article>
+        </div>
 
-  <!-- PRODUCTO 3 -->
-  <article class="producto">
-    <img src="../img/producto-1.jpg" alt="Cazuelas">
-    <h3>Cazuelas</h3>
-    <p class="precio">$25.000</p>
+      </section>
 
-    <button class="btn-agregar"
-      data-id="3"
-      data-nombre="Cazuelas"
-      data-precio="25000">
-      Agregar
-    </button>
-  </article>
+      <!-- SECCIÓN CARRITO -->
+      <aside class="carrito-section">
 
-</section>
+        <h3>🛒 Carrito</h3>
+        <p><span id="contador-carrito">0</span> productos</p>
+
+        <ul id="lista-carrito" class="carrito-lista"></ul>
+
+        <button id="vaciar-carrito" class="btn-vaciar">
+          Vaciar carrito
+        </button>
+
+      </aside>
+
+    </div>
+
   </main>
+
   <footer>
     <p>&copy; 2026 Holi Taller de Arte</p>
   </footer>
 
   <script src="../js/main.js"></script>
 
-<section class="carrito">
-  <h2>Tu carrito</h2>
-  <ul id="lista-carrito">
-    <button id="vaciar-carrito">Vaciar carrito</button>
-  </ul>
-</section>
 </body>
 </html>
