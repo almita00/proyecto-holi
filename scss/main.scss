@@ -76,7 +76,7 @@ nav a.active {
   color: $text-light;
 }
 
-.hero_container {
+.hero-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -85,17 +85,17 @@ nav a.active {
   gap: 2rem;
 }
 
-.hero_content h1 {
+.hero-container h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.hero_content p {
+.hero-container p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
 
-.hero_image img {
+.hero-container img {
   width: 100%;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
@@ -295,7 +295,7 @@ section {
 
 @media (max-width: 768px) {
 
-  .hero_container {
+  .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
   }
